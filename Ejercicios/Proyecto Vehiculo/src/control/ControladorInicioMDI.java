@@ -18,11 +18,7 @@ import modelo.Auto;
 import modelo.Moto;
 import modelo.Recaudo;
 import modelo.Vehiculo;
-import vista.CajasMensaje;
-import vista.FrmInicio;
-import vista.IntFrmConsulProp;
-import vista.IntFrmRecaudo;
-import vista.IntFrmRegistrar;
+import vista.*;
 
 /**
  *
@@ -47,7 +43,6 @@ public class ControladorInicioMDI extends Controlador{
         this.objV = null;
         this.modeloTB = null;
     }
-      
 
     @Override
     public void iniciar() {
@@ -56,6 +51,12 @@ public class ControladorInicioMDI extends Controlador{
         frmR.setLocationRelativeTo(null);
         
         inicializarActList(frmR);
+        
+        frmR.getBtnConsulPropMenu().addActionListener(this);
+        frmR.getBtnRecaudoMenu().addActionListener(this);
+        frmR.getBtnRegPropMenu().addActionListener(this);
+        frmR.getBtnRegistrarMenu().addActionListener(this);
+        frmR.getBtnSalirMenu().addActionListener(this);
         
         modeloTB = new IntFrmRecaudo().getTblDatos().getModel();
                 
@@ -84,7 +85,7 @@ public class ControladorInicioMDI extends Controlador{
         
         else if (e.getSource().equals(frmR.getBtnRegistrar()) || e.getSource().equals(frmR.getBtnRegistrarMenu())) inicializarInternalFrame(new ControladorRegistrarMDI(), new IntFrmRegistrar(), objR, objV, modeloTB);
                 
-        else if (e.getSource().equals(frmR.getBtnRegPropMenu())) new ControladorRegPropMDI().iniciar();
+        else if (e.getSource().equals(frmR.getBtnRegPropMenu())) inicializarInternalFrame(new ControladorRegPropMDI(), new IntFrmRegProp());
         
         else if (e.getSource().equals(frmR.getBtnSalir()) || e.getSource().equals(frmR.getBtnSalirMenu())) if (new CajasMensaje().confirmar("Desea Salir de la Aplicacion?")) frmR.dispose();
     }

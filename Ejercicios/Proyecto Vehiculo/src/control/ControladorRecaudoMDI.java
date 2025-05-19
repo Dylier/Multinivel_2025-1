@@ -1,20 +1,11 @@
 package control;
 
-import java.awt.Component;
-import java.awt.Container;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import modelo.Auto;
-import modelo.Moto;
+
 import modelo.Recaudo;
-import modelo.Vehiculo;
 import vista.IntFrmRecaudo;
 
 /**
@@ -24,41 +15,40 @@ import vista.IntFrmRecaudo;
 public class ControladorRecaudoMDI extends Controlador {
     IntFrmRecaudo frmR;
     Recaudo objR;
-    TableModel objTB;
+    TableModel modeloTB;
 
-    public ControladorRecaudoMDI(IntFrmRecaudo frmR, Recaudo objR, TableModel objTB) {
+    public ControladorRecaudoMDI(IntFrmRecaudo frmR, Recaudo objR, TableModel modeloTB) {
         this.frmR = frmR;
         this.objR = objR;
-        this.objTB = objTB;
+        this.modeloTB = modeloTB;
     }
         
     public ControladorRecaudoMDI() {
         this.frmR = new IntFrmRecaudo();
         this.objR = new Recaudo();
+        this.modeloTB = null;
     }
     
     @Override
     public void actualizarAtributos(Object[] atributos){
         frmR = (IntFrmRecaudo) atributos[0];
         objR = (Recaudo) atributos[1]; 
-        objTB = (TableModel) atributos[2];
+        modeloTB = (TableModel) atributos[2];
     }
     
 
     @Override
     public void iniciar() {
         frmR.setTitle("Registro Vehiculos");
-        frmR.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frmR.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
         inicializarActList(frmR);
         
-        frmR.getTblDatos().setModel(objTB);
+        frmR.getTblDatos().setModel(modeloTB);
         frmR.getBtnRecaudo().setEnabled(false);
         frmR.getTxtRecaudo().setEditable(false);
         frmR.setVisible(true);
     }
-    
-
     
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -2,16 +2,12 @@ package control;
 
 import java.awt.Component;
 import java.awt.Container;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import modelo.Auto;
-import modelo.Moto;
-import modelo.Recaudo;
-import modelo.Vehiculo;
-import vista.CajasMensaje;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -29,7 +25,9 @@ public abstract class Controlador implements ActionListener{
                 ((JComboBox) c).addActionListener(this);
             } else if (c instanceof JButton){
                 ((JButton) c).addActionListener(this);
-            } else if (c instanceof Container){
+            } else if (c instanceof JMenuItem){
+                ((JMenuItem) c).addActionListener(this);
+            } else if (c instanceof Container || c instanceof JMenuBar || c instanceof JMenu){
                 inicializarActList((Container) c);
             } 
         }

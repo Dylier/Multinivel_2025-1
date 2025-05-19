@@ -2,10 +2,7 @@ package control;
 
 import java.awt.Component;
 import java.awt.Container;
-import java.awt.List;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -17,7 +14,6 @@ import modelo.Auto;
 import modelo.Moto;
 import modelo.Recaudo;
 import modelo.Vehiculo;
-import vista.IntFrmRecaudo;
 import vista.IntFrmRegistrar;
 
 /**
@@ -52,20 +48,7 @@ public class ControladorRegistrarMDI extends Controlador {
         objV = (Vehiculo) atributos[2];
         objTB = (DefaultTableModel) atributos[3];
     }
-    
-    public void inicializarActList(Container Comp){
 
-        for(Component c: Comp.getComponents()){
-            if (c instanceof JComboBox){
-                ((JComboBox) c).addActionListener(this);
-            } else if (c instanceof JButton){
-                ((JButton) c).addActionListener(this);
-            } else if (c instanceof Container){
-                inicializarActList((Container) c);
-            } 
-        }
-    }
-    
     public void limpiarDatos(Container Comp){
         for(Component c: Comp.getComponents()){
             if (c instanceof JTextField){
@@ -80,8 +63,7 @@ public class ControladorRegistrarMDI extends Controlador {
             } 
         }
     }
-   
-    
+
     public void agregarRecaudoTabla(Recaudo objR, TableModel plantilla) { 
         ((DefaultTableModel )plantilla).setRowCount(0);
         for (Vehiculo vh : objR.getListaV()) {
@@ -100,12 +82,10 @@ public class ControladorRegistrarMDI extends Controlador {
     @Override
     public void iniciar() {
         frmR.setTitle("Registro Vehiculos");
-        frmR.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frmR.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         inicializarActList(frmR);
-        
 
-        
         frmR.getTxtCanPas().setEditable(true);
         frmR.getBtnRegistrar().setEnabled(false);
         
