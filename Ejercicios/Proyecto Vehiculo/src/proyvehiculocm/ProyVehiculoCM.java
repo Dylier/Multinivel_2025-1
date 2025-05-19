@@ -1,6 +1,7 @@
 package proyvehiculocm;
 
 import control.ControladorGUI;
+import control.ControladorInicioMDI;
 
 /**
  *
@@ -9,7 +10,7 @@ import control.ControladorGUI;
 public class ProyVehiculoCM {
 
     public static void main(String[] args) {
-        ControladorGUI objC = new ControladorGUI();
+        ControladorInicioMDI objC = new ControladorInicioMDI();
         objC.iniciar();
     }
     
