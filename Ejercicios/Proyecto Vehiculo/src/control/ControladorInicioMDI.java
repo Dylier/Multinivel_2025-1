@@ -1,21 +1,10 @@
 package control;
 
 import java.awt.Component;
-import java.awt.Container;
-import java.awt.List;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
-import modelo.Auto;
-import modelo.Moto;
 import modelo.Recaudo;
 import modelo.Vehiculo;
 import vista.*;
@@ -44,6 +33,17 @@ public class ControladorInicioMDI extends Controlador{
         this.modeloTB = null;
     }
 
+    public boolean verificarVentana(JInternalFrame ifrm) {
+        boolean existe = false;
+        for (Component c : frmR.getDesktopPane().getComponents()) {
+            if(c instanceof JInternalFrame){
+                existe = ((JInternalFrame) c).getClass().equals(ifrm.getClass());
+                if (existe) break;
+            }
+        }
+        return existe;
+    }
+    
     @Override
     public void iniciar() {
         frmR.setTitle("Registro Vehiculos");
@@ -71,23 +71,30 @@ public class ControladorInicioMDI extends Controlador{
     }
     
     private void inicializarInternalFrame(Controlador objC, Object... atributos){
-        objC.actualizarAtributos(atributos);
-        frmR.getDesktopPane().add((JInternalFrame) atributos[0]);
-        objC.iniciar();
-        ((JInternalFrame) atributos[0]).setVisible(true);
+        if (!verificarVentana((JInternalFrame) atributos[0])){
+            objC.actualizarAtributos(atributos);
+            frmR.getDesktopPane().add((JInternalFrame) atributos[0]);
+            objC.iniciar();
+            ((JInternalFrame) atributos[0]).setVisible(true);
+        }
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {       
-        if (e.getSource().equals(frmR.getBtnRecaudo()) || e.getSource().equals(frmR.getBtnRecaudoMenu())) inicializarInternalFrame(new ControladorRecaudoMDI(), new IntFrmRecaudo(), objR, modeloTB);
+        if (e.getSource().equals(frmR.getBtnRecaudo()) || e.getSource().equals(frmR.getBtnRecaudoMenu())) 
+            inicializarInternalFrame(new ControladorRecaudoMDI(), new IntFrmRecaudo(), objR, modeloTB);
         
-        else if (e.getSource().equals(frmR.getBtnConsulPropMenu())) inicializarInternalFrame(new ControladorConsulPropMDI(), new IntFrmConsulProp());
+        else if (e.getSource().equals(frmR.getBtnConsulPropMenu())) 
+            inicializarInternalFrame(new ControladorConsulPropMDI(), new IntFrmConsulProp());
         
-        else if (e.getSource().equals(frmR.getBtnRegistrar()) || e.getSource().equals(frmR.getBtnRegistrarMenu())) inicializarInternalFrame(new ControladorRegistrarMDI(), new IntFrmRegistrar(), objR, objV, modeloTB);
+        else if (e.getSource().equals(frmR.getBtnRegistrar()) || e.getSource().equals(frmR.getBtnRegistrarMenu())) 
+            inicializarInternalFrame(new ControladorRegistrarMDI(), new IntFrmRegistrar(), objR, objV, modeloTB);
                 
-        else if (e.getSource().equals(frmR.getBtnRegPropMenu())) inicializarInternalFrame(new ControladorRegPropMDI(), new IntFrmRegProp());
+        else if (e.getSource().equals(frmR.getBtnRegPropMenu())) 
+            inicializarInternalFrame(new ControladorRegPropMDI(), new IntFrmRegProp());
         
-        else if (e.getSource().equals(frmR.getBtnSalir()) || e.getSource().equals(frmR.getBtnSalirMenu())) if (new CajasMensaje().confirmar("Desea Salir de la Aplicacion?")) frmR.dispose();
+        else if (e.getSource().equals(frmR.getBtnSalir()) || e.getSource().equals(frmR.getBtnSalirMenu())) 
+            if (new CajasMensaje().confirmar("Desea Salir de la Aplicacion?")) frmR.dispose();
     }
 }
 

@@ -330,7 +330,7 @@ public class ControladorGUI implements ActionListener {
             if (e.getSource().equals(frmR.getBtnAnadirFormulario())){
                 if (objV != null && !listaC.isEmpty()){               
                     if (!objR.getFormularios().isEmpty()) {
-                        objF.setId(objR.getFormularios().getLast().getId() + 1);
+                        objF.setId(objR.getFormularios().get(objR.getFormularios().size()-1).getId() + 1);
                     } else {
                         objF.setId(1);
                     }

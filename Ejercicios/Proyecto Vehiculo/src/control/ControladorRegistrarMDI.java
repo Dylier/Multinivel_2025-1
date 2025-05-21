@@ -133,6 +133,7 @@ public class ControladorRegistrarMDI extends Controlador {
             limpiarDatos(frmR);
             
             objR.getListaV().add(objV);
+            agregarRecaudoTabla(objR, frmR.getTblDatos().getModel());
             agregarRecaudoTabla(objR, objTB);
             JOptionPane.showMessageDialog(frmR,
                     "Datos Registrados: " + objV.toString() + "\nImpuesto: " + String.format("%.2f", objV.Impuesto()),

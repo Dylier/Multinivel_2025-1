@@ -18,18 +18,22 @@ public abstract class Controlador implements ActionListener{
     public abstract void iniciar();
     
     public abstract void actualizarAtributos(Object... atributos);
-    
+         
     public void inicializarActList(Container Comp){
         for(Component c: Comp.getComponents()){
-            if (c instanceof JComboBox){
-                ((JComboBox) c).addActionListener(this);
-            } else if (c instanceof JButton){
-                ((JButton) c).addActionListener(this);
-            } else if (c instanceof JMenuItem){
-                ((JMenuItem) c).addActionListener(this);
-            } else if (c instanceof Container || c instanceof JMenuBar || c instanceof JMenu){
-                inicializarActList((Container) c);
-            } 
+            System.out.println(c.getClass());
+            if (c instanceof JComboBox)((JComboBox) c).addActionListener(this);
+            else if (c instanceof JButton)((JButton) c).addActionListener(this);
+            else if (c instanceof JMenuItem) ((JMenuItem) c).addActionListener(this);
+            /*else if (c instanceof JMenu) {
+                Container cont = new Container();
+                for(Component co :((JMenu)c).getComponents()) cont.add(co);                
+                inicializarActList((Container) cont);
+            } else if (c instanceof JMenuBar){
+                Container cont = new Container();
+                for(Component co :((JMenuBar)c).getComponents()) cont.add(co);
+                inicializarActList((Container) cont);           
+            }*/ else if (c instanceof Container || c instanceof JMenuBar || c instanceof JMenu) inicializarActList((Container) c);            
         }
     }
 }

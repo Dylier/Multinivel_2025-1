@@ -1,7 +1,6 @@
 package proyvehiculocm;
 
 import control.ControladorGUI;
-import control.ControladorMDI;
 
 /**
  *
