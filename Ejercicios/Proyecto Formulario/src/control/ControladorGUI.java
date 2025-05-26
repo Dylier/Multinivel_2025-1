@@ -72,7 +72,7 @@ public class ControladorGUI implements ActionListener {
         frmR.getBtnRegistrar().setEnabled(false);
         frmR.getBtnRecaudo().setEnabled(false);
         frmR.getCmbNFormulario().setEnabled(false);
-        
+        frmR.getTbAvisos().setVisible(false);
         frmR.setVisible(true);
     }
     
@@ -108,12 +108,17 @@ public class ControladorGUI implements ActionListener {
         for(Component c: Comp.getComponents()){
             if (c instanceof JTextField) infoComp = !((JTextField) c).getText().isEmpty();
             else if (c instanceof Container) infoComp = informacionCompleta((Container) c);            
-            if (!infoComp) break;
+            if (!infoComp) {
+                frmR.getTbAvisos().setVisible(true);
+                frmR.getLbAvisos().setText(c.getName() != null ?  "Falta completar el campo " + c.getName(): "Faltan por completar campos obligatorios");
+                break;
+            } else {
+                frmR.getTbAvisos().setVisible(false);
+            }
         }
-        return infoComp;
-        
+        return infoComp;        
     }
-
+    
     public void agregarContriyenteTabla(List<JTable> tablas) {
         for (Contribuyente c: listaC) {
             Object[] datos = {
