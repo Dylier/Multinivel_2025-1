@@ -20,11 +20,11 @@ import vista.IfrmConsulPropietarios;
 public class ControladorConsulPropietarios extends Controlador{
     IfrmConsulPropietarios frmP;
     Recaudo objR;
-       
+
     /**
-     *
+     * Actualiza la tabla de propietarios en la interfaz.
      */
-    public void actualizarTabla(){        
+    public void actualizarTabla(){
         for (Formulario objF: objR.getFormularios()){
             for (Contribuyente objC: objF.getContribuyentes()){
                Object[] datosC = objC.getArregloDatos();
@@ -32,24 +32,25 @@ public class ControladorConsulPropietarios extends Controlador{
                for (int i = 0; i < datosC.length; i++) datosT[i] = datosC[i];
                datosT[datosT.length - 1] = objF.getId();
                ((DefaultTableModel) frmP.getTblDatosContibuyentes().getModel()).addRow(datosT);
-            }            
+            }
         }
     }
-    
+
     /**
-     *
+     * Inicia el controlador configurando la ventana y llenando la tabla.
      */
     @Override
     public void iniciar() {
         frmP.setTitle("Registro de Propietarios");
-        frmP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);       
+        frmP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         inicializarActList(frmP);
         actualizarTabla();
         frmP.setVisible(true);
     }
 
     /**
-     *
+     * Actualiza los atributos de la ventana interna.
+     * @param frm
      * @param atributos
      */
     @Override
@@ -59,11 +60,11 @@ public class ControladorConsulPropietarios extends Controlador{
     }
 
     /**
-     *
+     * Maneja las acciones de los eventos. 
      * @param e
      */
     @Override
     public void actionPerformed(ActionEvent e) {
     }
-    
+
 }

@@ -54,7 +54,6 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
         txtDescCombus = new javax.swing.JTextField();
         lblDescProntoP = new javax.swing.JLabel();
         txtDescProntoP = new javax.swing.JTextField();
-        btnProntoP = new javax.swing.JToggleButton();
         lblTotal = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
         lblPagoVoluntario = new javax.swing.JLabel();
@@ -64,7 +63,17 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
         separador1 = new javax.swing.JSeparator();
         separador2 = new javax.swing.JSeparator();
         btnPDF = new javax.swing.JButton();
+        lblTotalDescPP = new javax.swing.JLabel();
+        txtTotalDescPP = new javax.swing.JTextField();
+        lblTotalPVolDescPP = new javax.swing.JLabel();
+        txtTotalPVolDescPP = new javax.swing.JTextField();
+        separador3 = new javax.swing.JSeparator();
         btnReintentar = new javax.swing.JButton();
+        lblFechaOp = new javax.swing.JLabel();
+        txtFechaOp = new javax.swing.JTextField();
+        lblFechaLim = new javax.swing.JLabel();
+        txtFechaLim = new javax.swing.JTextField();
+        separador4 = new javax.swing.JSeparator();
 
         setClosable(true);
         setIconifiable(true);
@@ -165,8 +174,6 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
 
         lblDescProntoP.setText("Descuento Pronto Pago");
 
-        btnProntoP.setText("Ver sin Descuento");
-
         lblTotal.setText("Total a Pagar");
 
         lblPagoVoluntario.setText("Pago Voluntario");
@@ -188,7 +195,19 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
             }
         });
 
+        lblTotalDescPP.setText("Total con Desc. Pronto Pago");
+
+        lblTotalPVolDescPP.setText("Total con P Vol y D pronto P");
+
+        separador3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         btnReintentar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Reintentar.png"))); // NOI18N
+
+        lblFechaOp.setText("Fecha Oportuna");
+
+        lblFechaLim.setText("Fecha Limite");
+
+        separador4.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -199,7 +218,34 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTotal, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                            .addComponent(scrollTblVehiRecaudo)
+                            .addComponent(scrollTblDatosContRecaudo)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(NFormulario)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cmbNFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnReintentar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(2, 2, 2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblTblContRecaudo)
+                                    .addComponent(lblTblVehiRecaudo))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblRecaudoTotal)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(txtRecaudo)
+                            .addComponent(btnRecaudo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnPDF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTotal)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(txtValSemaforizacion, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblValSemaforizacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -223,47 +269,35 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
                             .addComponent(txtDescProntoP, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblDescProntoP))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnProntoP, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(scrollTblVehiRecaudo)
-                    .addComponent(scrollTblDatosContRecaudo)
-                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(separador3, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblTblContRecaudo)
-                            .addComponent(lblTblVehiRecaudo)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(NFormulario)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbNFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnReintentar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(2, 2, 2)))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRecaudo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRecaudo, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblRecaudoTotal))
-                        .addGap(0, 2, Short.MAX_VALUE))
-                    .addComponent(btnPDF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(15, 15, 15))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtTotalPVolDescPP, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblTotalPVolDescPP, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(txtTotalDescPP, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblTotalDescPP))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(separador4, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblFechaLim)
+                            .addComponent(txtFechaOp)
+                            .addComponent(lblFechaOp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtFechaLim))))
+                .addGap(5, 5, 5))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(NFormulario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cmbNFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnReintentar, javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(NFormulario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cmbNFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(btnReintentar)))
                 .addGap(7, 7, 7)
                 .addComponent(lblTblVehiRecaudo)
                 .addGap(6, 6, 6)
@@ -273,10 +307,31 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblTblContRecaudo, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)
-                        .addComponent(scrollTblDatosContRecaudo, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(scrollTblDatosContRecaudo, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnPDF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnRecaudo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)
+                        .addComponent(lblRecaudoTotal)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtRecaudo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(separador3)
+                    .addComponent(separador2)
+                    .addComponent(separador1)
+                    .addComponent(separador4)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(separador2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblTotalDescPP)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTotalDescPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblTotalPVolDescPP)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtTotalPVolDescPP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(lblValSemaforizacion)
@@ -305,16 +360,15 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
                                             .addComponent(lblTotalPagoV)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(txtTotalPagoV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addComponent(separador1)
-                            .addComponent(btnProntoP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnPDF, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnRecaudo, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblRecaudoTotal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtRecaudo, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblFechaOp)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtFechaOp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblFechaLim)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtFechaLim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -333,6 +387,86 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
      *
      * @return
      */
+    public JLabel getLblFechaLim() {
+        return lblFechaLim;
+    }
+
+    /**
+     *
+     * @param lblFechaLim
+     */
+    public void setLblFechaLim(JLabel lblFechaLim) {
+        this.lblFechaLim = lblFechaLim;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public JLabel getLblFechaOp() {
+        return lblFechaOp;
+    }
+
+    /**
+     *
+     * @param lblFechaOp
+     */
+    public void setLblFechaOp(JLabel lblFechaOp) {
+        this.lblFechaOp = lblFechaOp;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public JSeparator getSeparador4() {
+        return separador4;
+    }
+
+    /**
+     *
+     * @param separador4
+     */
+    public void setSeparador4(JSeparator separador4) {
+        this.separador4 = separador4;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public JTextField getTxtFechaLim() {
+        return txtFechaLim;
+    }
+
+    /**
+     *
+     * @param txtFechaLim
+     */
+    public void setTxtFechaLim(JTextField txtFechaLim) {
+        this.txtFechaLim = txtFechaLim;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public JTextField getTxtFechaOp() {
+        return txtFechaOp;
+    }
+
+    /**
+     *
+     * @param txtFechaOp
+     */
+    public void setTxtFechaOp(JTextField txtFechaOp) {
+        this.txtFechaOp = txtFechaOp;
+    }
+
+    /**
+     *
+     * @return
+     */
     public JButton getBtnReintentar() {
         return btnReintentar;
     }
@@ -344,6 +478,87 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
     public void setBtnReintentar(JButton btnReintentar) {
         this.btnReintentar = btnReintentar;
     }
+
+    /**
+     *
+     * @return
+     */
+    public JLabel getLblTotalDescPP() {
+        return lblTotalDescPP;
+    }
+
+    /**
+     *
+     * @param lblTotalDescPP
+     */
+    public void setLblTotalDescPP(JLabel lblTotalDescPP) {
+        this.lblTotalDescPP = lblTotalDescPP;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public JLabel getLblTotalPVolDescPP() {
+        return lblTotalPVolDescPP;
+    }
+
+    /**
+     *
+     * @param lblTotalPVolDescPP
+     */
+    public void setLblTotalPVolDescPP(JLabel lblTotalPVolDescPP) {
+        this.lblTotalPVolDescPP = lblTotalPVolDescPP;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public JSeparator getSeparador3() {
+        return separador3;
+    }
+
+    /**
+     *
+     * @param separador3
+     */
+    public void setSeparador3(JSeparator separador3) {
+        this.separador3 = separador3;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public JTextField getTxtTotalDescPP() {
+        return txtTotalDescPP;
+    }
+
+    /**
+     *
+     * @param txtTotalDescPP
+     */
+    public void setTxtTotalDescPP(JTextField txtTotalDescPP) {
+        this.txtTotalDescPP = txtTotalDescPP;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public JTextField getTxtTotalPVolDescPP() {
+        return txtTotalPVolDescPP;
+    }
+
+    /**
+     *
+     * @param txtTotalPVolDescPP
+     */
+    public void setTxtTotalPVolDescPP(JTextField txtTotalPVolDescPP) {
+        this.txtTotalPVolDescPP = txtTotalPVolDescPP;
+    }
+
 
     /**
      *
@@ -409,21 +624,6 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
         this.btnEditar = btnEditar;
     }
 
-    /**
-     *
-     * @return
-     */
-    public JToggleButton getBtnProntoP() {
-        return btnProntoP;
-    }
-
-    /**
-     *
-     * @param btnProntoP
-     */
-    public void setBtnProntoP(JToggleButton btnProntoP) {
-        this.btnProntoP = btnProntoP;
-    }
 
     /**
      *
@@ -815,30 +1015,39 @@ public class IfrmConsulRecaudo extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnPDF;
-    private javax.swing.JToggleButton btnProntoP;
     private javax.swing.JButton btnRecaudo;
     private javax.swing.JButton btnReintentar;
     private javax.swing.JComboBox<String> cmbNFormulario;
     private javax.swing.JLabel lblDescCombustible;
     private javax.swing.JLabel lblDescProntoP;
+    private javax.swing.JLabel lblFechaLim;
+    private javax.swing.JLabel lblFechaOp;
     private javax.swing.JLabel lblPagoVoluntario;
     private javax.swing.JLabel lblRecaudoTotal;
     private javax.swing.JLabel lblTblContRecaudo;
     private javax.swing.JLabel lblTblVehiRecaudo;
     private javax.swing.JLabel lblTotal;
+    private javax.swing.JLabel lblTotalDescPP;
+    private javax.swing.JLabel lblTotalPVolDescPP;
     private javax.swing.JLabel lblTotalPagoV;
     private javax.swing.JLabel lblValSemaforizacion;
     private javax.swing.JScrollPane scrollTblDatosContRecaudo;
     private javax.swing.JScrollPane scrollTblVehiRecaudo;
     private javax.swing.JSeparator separador1;
     private javax.swing.JSeparator separador2;
+    private javax.swing.JSeparator separador3;
+    private javax.swing.JSeparator separador4;
     private javax.swing.JTable tblDatosContRecaudo;
     private javax.swing.JTable tblDatosVehiRecaudo;
     private javax.swing.JTextField txtDescCombus;
     private javax.swing.JTextField txtDescProntoP;
+    private javax.swing.JTextField txtFechaLim;
+    private javax.swing.JTextField txtFechaOp;
     private javax.swing.JTextField txtPagoVoluntario;
     private javax.swing.JTextField txtRecaudo;
     private javax.swing.JTextField txtTotal;
+    private javax.swing.JTextField txtTotalDescPP;
+    private javax.swing.JTextField txtTotalPVolDescPP;
     private javax.swing.JTextField txtTotalPagoV;
     private javax.swing.JTextField txtValSemaforizacion;
     // End of variables declaration//GEN-END:variables

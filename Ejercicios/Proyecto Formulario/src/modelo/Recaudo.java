@@ -46,8 +46,8 @@ public class Recaudo {
      */
     public Double totalRecaudo(){
         double total = 0.0;
-        for (Formulario formulario : formularios) {
-            total += formulario.getVehiculo().getImpuesto();
+        for (int i = 0;  i < formularios.size() - 1; i++) {
+            total += formularios.get(i).getVehiculo().getImpuesto();
         }
         return total;
     }

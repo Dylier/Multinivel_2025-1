@@ -29,9 +29,43 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtTotal" alignment="0" pref="112" max="32767" attributes="0"/>
+                          <Component id="scrollTblVehiRecaudo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="scrollTblDatosContRecaudo" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="NFormulario" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="cmbNFormulario" min="-2" pref="333" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnReintentar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnEditar" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblTblContRecaudo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblTblVehiRecaudo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblRecaudoTotal" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="txtRecaudo" max="32767" attributes="0"/>
+                          <Component id="btnRecaudo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnPDF" max="32767" attributes="0"/>
+                          <Component id="btnBuscar" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtTotal" alignment="0" max="32767" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                               <Component id="txtValSemaforizacion" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblValSemaforizacion" alignment="0" max="32767" attributes="0"/>
@@ -57,45 +91,32 @@
                               <Component id="txtTotalPagoV" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
                               <Component id="lblTotalPagoV" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="txtDescProntoP" min="-2" pref="125" max="-2" attributes="0"/>
-                          <Component id="lblDescProntoP" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtDescProntoP" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                          <Component id="lblDescProntoP" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="separador3" min="-2" pref="7" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="btnProntoP" min="-2" pref="131" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="scrollTblVehiRecaudo" alignment="0" max="32767" attributes="0"/>
-                  <Component id="scrollTblDatosContRecaudo" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblTblContRecaudo" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblTblVehiRecaudo" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="NFormulario" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="cmbNFormulario" min="-2" pref="284" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="btnReintentar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="btnEditar" max="32767" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                              <Component id="txtTotalPVolDescPP" alignment="0" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="lblTotalPVolDescPP" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="txtTotalDescPP" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                          <Component id="lblTotalDescPP" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="separador4" min="-2" pref="7" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblFechaLim" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtFechaOp" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblFechaOp" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtFechaLim" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnRecaudo" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnBuscar" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtRecaudo" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="lblRecaudoTotal" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="btnPDF" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -104,16 +125,12 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="103" alignment="1" groupAlignment="1" attributes="0">
-                      <Component id="NFormulario" alignment="0" max="32767" attributes="0"/>
-                      <Component id="cmbNFormulario" alignment="1" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Component id="btnReintentar" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnEditar" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="btnBuscar" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                      </Group>
+                  <Component id="NFormulario" alignment="1" max="32767" attributes="0"/>
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="btnEditar" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="btnBuscar" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="cmbNFormulario" alignment="3" pref="0" max="32767" attributes="0"/>
+                      <Component id="btnReintentar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
@@ -122,13 +139,38 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="scrollTblVehiRecaudo" min="-2" pref="58" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblTblContRecaudo" min="-2" pref="16" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       <Component id="scrollTblDatosContRecaudo" min="-2" pref="174" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="btnPDF" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnRecaudo" min="-2" pref="47" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <Component id="lblRecaudoTotal" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="txtRecaudo" min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="separador3" alignment="0" max="32767" attributes="0"/>
+                  <Component id="separador2" max="32767" attributes="0"/>
+                  <Component id="separador1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="separador4" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="separador2" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblTotalDescPP" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtTotalDescPP" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblTotalPVolDescPP" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtTotalPVolDescPP" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="103" alignment="0" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="lblValSemaforizacion" min="-2" max="-2" attributes="0"/>
@@ -165,21 +207,20 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <Component id="separador1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnProntoP" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblFechaOp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtFechaOp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblFechaLim" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtFechaLim" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="btnPDF" max="32767" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btnRecaudo" min="-2" pref="164" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="lblRecaudoTotal" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtRecaudo" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -368,11 +409,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtDescProntoP">
     </Component>
-    <Component class="javax.swing.JToggleButton" name="btnProntoP">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Ver sin Descuento"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="lblTotal">
       <Properties>
         <Property name="text" type="java.lang.String" value="Total a Pagar"/>
@@ -426,11 +462,49 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPDFActionPerformed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JLabel" name="lblTotalDescPP">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total con Desc. Pronto Pago"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTotalDescPP">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblTotalPVolDescPP">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Total con P Vol y D pronto P"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtTotalPVolDescPP">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="separador3">
+      <Properties>
+        <Property name="orientation" type="int" value="1"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JButton" name="btnReintentar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/img/Reintentar.png"/>
         </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblFechaOp">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha Oportuna"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtFechaOp">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblFechaLim">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Fecha Limite"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtFechaLim">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="separador4">
+      <Properties>
+        <Property name="orientation" type="int" value="1"/>
       </Properties>
     </Component>
   </SubComponents>

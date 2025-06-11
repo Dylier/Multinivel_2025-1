@@ -7,8 +7,8 @@ package modelo;
 public interface ArregloDatos {
 
     /**
-     *
-     * @return
+     * Devuelve datos en formato arreglo
+     * @return Object[]
      */
     Object[] getArregloDatos();
 }

@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JTextField;
 import javax.swing.JToolBar;
 
 /**
@@ -42,7 +43,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         btnConsulRecaudo = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         tlBarAvisos = new javax.swing.JToolBar();
-        Aviso = new javax.swing.JLabel();
+        txtAvisos = new javax.swing.JTextField();
         menuBar = new javax.swing.JMenuBar();
         MenuAgregar = new javax.swing.JMenu();
         btnMnAgVehiculo = new javax.swing.JMenuItem();
@@ -67,37 +68,37 @@ public class FrmPrincipal extends javax.swing.JFrame {
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 210, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         tlBarOpciones.setOrientation(javax.swing.SwingConstants.VERTICAL);
         tlBarOpciones.setRollover(true);
 
-        btnAgVehiculo.setText("Vehiculo");
+        btnAgVehiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/vehiculo.png"))); // NOI18N
         btnAgVehiculo.setFocusable(false);
         btnAgVehiculo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAgVehiculo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         tlBarOpciones.add(btnAgVehiculo);
 
-        btnAgPropietarios.setText("Propietario");
+        btnAgPropietarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/propietario.png"))); // NOI18N
         btnAgPropietarios.setFocusable(false);
         btnAgPropietarios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAgPropietarios.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         tlBarOpciones.add(btnAgPropietarios);
 
-        btnAgFormulario.setText("Formulario");
+        btnAgFormulario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Documento.png"))); // NOI18N
         btnAgFormulario.setFocusable(false);
         btnAgFormulario.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAgFormulario.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         tlBarOpciones.add(btnAgFormulario);
 
-        btnConsulRecaudo.setText("Consultar Recaudo");
+        btnConsulRecaudo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa.png"))); // NOI18N
         btnConsulRecaudo.setFocusable(false);
         btnConsulRecaudo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnConsulRecaudo.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         tlBarOpciones.add(btnConsulRecaudo);
 
-        btnSalir.setText("Salir");
+        btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salida.png"))); // NOI18N
         btnSalir.setFocusable(false);
         btnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -109,17 +110,28 @@ public class FrmPrincipal extends javax.swing.JFrame {
         tlBarOpciones.add(btnSalir);
 
         tlBarAvisos.setRollover(true);
-        tlBarAvisos.add(Aviso);
+        tlBarAvisos.setEnabled(false);
+
+        txtAvisos.setEditable(false);
+        txtAvisos.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        txtAvisos.setDragEnabled(true);
+        tlBarAvisos.add(txtAvisos);
 
         MenuAgregar.setMnemonic('e');
         MenuAgregar.setText("Agregar");
 
+        btnMnAgVehiculo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        btnMnAgVehiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/vehiculo.png"))); // NOI18N
         btnMnAgVehiculo.setText("Vehiculo");
         MenuAgregar.add(btnMnAgVehiculo);
 
+        btnMnAgPropietario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        btnMnAgPropietario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/propietario.png"))); // NOI18N
         btnMnAgPropietario.setText("Propietario");
         MenuAgregar.add(btnMnAgPropietario);
 
+        btnMnAgFormulario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        btnMnAgFormulario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Documento.png"))); // NOI18N
         btnMnAgFormulario.setText("Formulario");
         MenuAgregar.add(btnMnAgFormulario);
 
@@ -127,12 +139,18 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         MenuConsultar.setText("Consultar");
 
+        btnMnConsulVehiculos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        btnMnConsulVehiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/vehiculo.png"))); // NOI18N
         btnMnConsulVehiculos.setText("Vehiculos");
         MenuConsultar.add(btnMnConsulVehiculos);
 
+        btnMnConsulPropietarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        btnMnConsulPropietarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/propietario.png"))); // NOI18N
         btnMnConsulPropietarios.setText("Propietarios");
         MenuConsultar.add(btnMnConsulPropietarios);
 
+        btnMnConsulFormularios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        btnMnConsulFormularios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lupa.png"))); // NOI18N
         btnMnConsulFormularios.setText("Recaudo Formularios");
         MenuConsultar.add(btnMnConsulFormularios);
 
@@ -182,20 +200,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirActionPerformed
 
-    /**
-     *
-     * @return
-     */
-    public JLabel getAviso() {
-        return Aviso;
+    public JTextField getTxtAvisos() {
+        return txtAvisos;
     }
 
-    /**
-     *
-     * @param Aviso
-     */
-    public void setAviso(JLabel Aviso) {
-        this.Aviso = Aviso;
+    public void setTxtAvisos(JTextField txtAvisos) {
+        this.txtAvisos = txtAvisos;
     }
 
     /**
@@ -496,7 +506,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Aviso;
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JMenu MenuAgregar;
     private javax.swing.JMenu MenuAyuda;
@@ -516,6 +525,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JToolBar tlBarAvisos;
     private javax.swing.JToolBar tlBarOpciones;
+    private javax.swing.JTextField txtAvisos;
     // End of variables declaration//GEN-END:variables
 
 }

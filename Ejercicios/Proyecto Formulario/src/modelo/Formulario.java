@@ -19,11 +19,11 @@ public class Formulario {
     private Date fechaOportuna;
     private Date fechaLimite;
     private Double descuentoAdd;
-    
+
     private static final SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
 
     /**
-     *
+     * Crea un formulario con detalles completos
      * @param id
      * @param vehiculo
      * @param contribuyentes
@@ -39,9 +39,9 @@ public class Formulario {
         this.fechaLimite = fechaLimite;
         this.descuentoAdd = descuentoAdd;
     }
-    
+
     /**
-     *
+     * Crea un formulario con valores iniciales
      */
     public Formulario() {
         this.vehiculo = null;
@@ -52,15 +52,15 @@ public class Formulario {
     }
 
     /**
-     *
-     * @return
+     * Obtiene el descuento adicional
+     * @return Double
      */
     public Double getDescuentoAdd() {
         return descuentoAdd;
     }
 
     /**
-     *
+     * Establece el descuento adicional
      * @param descuentoAdd
      */
     public void setDescuentoAdd(Double descuentoAdd) {
@@ -68,15 +68,15 @@ public class Formulario {
     }
 
     /**
-     *
-     * @return
+     * Obtiene el ID del formulario
+     * @return int
      */
     public int getId() {
         return id;
     }
 
     /**
-     *
+     * Establece el ID del formulario
      * @param id
      */
     public void setId(int id) {
@@ -84,15 +84,15 @@ public class Formulario {
     }
 
     /**
-     *
-     * @return
+     * Obtiene el vehiculo asociado
+     * @return Vehiculo
      */
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
 
     /**
-     *
+     * Establece el vehiculo asociado
      * @param vehiculo
      */
     public void setVehiculo(Vehiculo vehiculo) {
@@ -100,15 +100,15 @@ public class Formulario {
     }
 
     /**
-     *
-     * @return
+     * Obtiene la lista de contribuyentes
+     * @return ArrayList<Contribuyente>
      */
     public ArrayList<Contribuyente> getContribuyentes() {
         return contribuyentes;
     }
 
     /**
-     *
+     * Establece la lista de contribuyentes
      * @param contribuyentes
      */
     public void setContribuyentes(ArrayList<Contribuyente> contribuyentes) {
@@ -116,15 +116,15 @@ public class Formulario {
     }
 
     /**
-     *
-     * @return
+     * Obtiene la fecha de pago oportuno
+     * @return Date
      */
     public Date getFechaOportuna() {
         return fechaOportuna;
     }
 
     /**
-     *
+     * Establece la fecha de pago oportuno
      * @param fechaOportuna
      */
     public void setFechaOportuna(Date fechaOportuna) {
@@ -132,15 +132,15 @@ public class Formulario {
     }
 
     /**
-     *
-     * @return
+     * Obtiene la fecha limite de pago
+     * @return Date
      */
     public Date getFechaLimite() {
         return fechaLimite;
     }
 
     /**
-     *
+     * Establece la fecha limite de pago
      * @param fechaLimite
      */
     public void setFechaLimite(Date fechaLimite) {
@@ -148,20 +148,20 @@ public class Formulario {
     }
 
     /**
-     *
-     * @return
+     * Calcula el descuento por pronto pago
+     * @return double
      */
     public double getDescuentoProntoPago(){
         return 0.10 * (vehiculo.getImpuesto() + vehiculo.getValor());
     }
-    
+
     /**
-     *
-     * @return
+     * Obtiene los datos de los contribuyentes
+     * @return ArrayList<Object[]>
      */
     public ArrayList<Object[]> getDatosContribuyentes() {
         if (contribuyentes == null || contribuyentes.isEmpty()) {
-            return new ArrayList<>(); 
+            return new ArrayList<>();
         }
         ArrayList<Object[]> datos = new ArrayList<>();
         for (int i = 0; i < contribuyentes.size(); i++) {
@@ -171,8 +171,8 @@ public class Formulario {
     }
 
     /**
-     *
-     * @return
+     * Calcula el valor de semaforizacion
+     * @return double
      */
     public double getValorSemaforizacion(){
         if (vehiculo instanceof Auto)
@@ -180,31 +180,38 @@ public class Formulario {
         else
             return 2000;
     }
-    
+
     /**
-     *
-     * @return
+     * Calcula el total a pagar
+     * @return double
      */
     public double getTotal(){
         return vehiculo.getValor() + vehiculo.getImpuesto();
     }
-    
+
     /**
-     *
-     * @return
+     * Calcula el pago voluntario
+     * @return double
      */
     public double getPagoVoluntario(){
         return 0.10 * (vehiculo.getValor() + vehiculo.getImpuesto());
     }
-    
+
     /**
-     *
-     * @return
+     * Calcula el descuento por combustible
+     * @return double
      */
     public double getDescuentoCombustible(){
-        return 0.0;
+        if ("EcoDiesel".equals(vehiculo.getCombustible())){
+            return 100000;
+        }else
+            return 0;
     }
-    
+
+    /**
+     * Obtiene tabla con datos de liquidacion
+     * @return JTable
+     */
     JTable getDatosLiquidacion() {
         DefaultTableModel tbm = new DefaultTableModel();
         String[] columnas = new String[] {"Nombre", "Iniciales", "Valor Pago Oportuno", "Valor Pago Tardio"};
@@ -214,6 +221,10 @@ public class Formulario {
         return new JTable(tbm);
     }
 
+    /**
+     * Obtiene tabla con datos de pago
+     * @return JTable
+     */
     JTable getDatosPago() {
         DefaultTableModel tbm = new DefaultTableModel();
         String[] columnas = new String[] {"Nombre", "Iniciales", "Valor Pago Oportuno", "Valor Pago Tardio"};
@@ -223,10 +234,14 @@ public class Formulario {
         tbm.addRow(new Object[] {"20. DESCUENTO COMBUSTIBLE", "IS", getDescuentoCombustible(), getDescuentoCombustible()});
         tbm.addRow(new Object[] {"21. DESCUENTO ADICIONAL", "DA", getDescuentoAdd(), getDescuentoAdd()});
         tbm.addRow(new Object[] {"22. DESCUENTO COMBUSTIBLE", "TD", getDescuentoProntoPago(), 0});
-        tbm.addRow(new Object[] {"23. DESCUENTO COMBUSTIBLE", "TP", getTotal() - getDescuentoProntoPago(), getTotal()});        
+        tbm.addRow(new Object[] {"23. DESCUENTO COMBUSTIBLE", "TP", getTotal() - getDescuentoProntoPago(), getTotal()});
         return new JTable(tbm);
     }
 
+    /**
+     * Obtiene tabla de pago voluntario
+     * @return JTable
+     */
     JTable getDatosPagoVoluntario() {
         DefaultTableModel tbm = new DefaultTableModel();
         String[] columnas = new String[] {"Nombre", "Iniciales", "Valor Pago Oportuno", "Valor Pago Tardio"};
@@ -236,6 +251,10 @@ public class Formulario {
         return new JTable(tbm);
     }
 
+    /**
+     * Obtiene tabla con datos de contribuyentes
+     * @return JTable
+     */
     JTable getTableContribuyentes() {
         DefaultTableModel tbm = new DefaultTableModel();
         String[] columnas = new String[]  {"8. TIPO", "9.No.IDENTIFICACION", "10.NOMBRES Y APELLIDOS/RAZON SOCIAL", "11. % PROP", "12. CALIDAD", "13. DIRECCION DE NOTIFICACION", "14. MUNICIPIO"};
@@ -245,15 +264,23 @@ public class Formulario {
         return new JTable(tbm);
     }
 
+    /**
+     * Obtiene tabla con datos de fechas
+     * @return JTable
+     */
     JTable getDatosFecha() {
         DefaultTableModel tbm = new DefaultTableModel();
         String[] columnas = new String[]  {"Nombre", "", "Hasta Temprano", "Hasta Tardio"};
         for (String columna: columnas) tbm.addColumn(columna);
         tbm.addRow(new Object[] {"FECHA LIMITE DE PAGO", "", "HASTA" + formatoFecha.format(fechaOportuna), "HASTA" + formatoFecha.format(fechaLimite)});
-        return new JTable(tbm);   
+        return new JTable(tbm);
     }
-    
+
+    /**
+     * Obtiene datos principales del vehiculo
+     * @return Object[]
+     */
     Object[] getDatosVehiculo(){
-        return new Object[] {"1. PLACA " + vehiculo.getPlaca(), "2. MARCA " + vehiculo.getMarca(), "3. LINEA " + "SPARK", "4. MODELO " + vehiculo.getModelo(), "5. CAPACIDAD " + "1300", "6. USO " + "Particular", "7. GRUPO " + "---"};
+        return new Object[] {"1. PLACA " + vehiculo.getPlaca(), "2. MARCA " + vehiculo.getMarca(), "3. LINEA " + vehiculo.getLinea(), "4. MODELO " + vehiculo.getModelo(), "5. CAPACIDAD " + vehiculo.getCapacidad(), "6. USO " + vehiculo.getUso(), "7. GRUPO " + vehiculo.getGrupo()};
     }
 }

@@ -8,8 +8,8 @@ public class Auto extends Vehiculo{
     private int cantPasajeros;
 
     /**
-     *
-     * @return
+     * Calcula impuesto auto segun su modelo
+     * @return double
      */
     @Override
     public double getImpuesto(){
@@ -24,7 +24,7 @@ public class Auto extends Vehiculo{
         // Constructor Vacio
 
     /**
-     *
+     * Crea un auto con valores predeterminados
      */
     public Auto() {
         super(); // Constructor del super
@@ -33,6 +33,9 @@ public class Auto extends Vehiculo{
 
         // Constructor Super
 
+    /**
+     * Crea un auto con todos sus detalles especificados
+     */
     public Auto(int cantPasajeros, String placa, String linea, String grupo, String uso, String marca, String combustible, int modelo, int cilindraje, int capacidad, double valor) {
         super(placa, linea, grupo, uso, marca, combustible, modelo, cilindraje, capacidad, valor);
         this.cantPasajeros = cantPasajeros;
@@ -40,15 +43,15 @@ public class Auto extends Vehiculo{
 
 
     /**
-     *
-     * @return
+     * Obtiene la cantidad de pasajeros
+     * @return int
      */
     public int getCantPasajeros() {
         return cantPasajeros;
     }
 
     /**
-     *
+     * Establece la cantidad de pasajeros
      * @param cantPasajeros
      */
     public void setCantPasajeros(int cantPasajeros) {
@@ -57,8 +60,8 @@ public class Auto extends Vehiculo{
 
 
     /**
-     *
-     * @return
+     * Devuelve los datos del auto en un arreglo
+     * @return Object[]
      */
     @Override
     public Object[] getArregloDatos() {
@@ -66,12 +69,12 @@ public class Auto extends Vehiculo{
     }
 
     /**
-     *
-     * @return
+     * Devuelve texto con detalles del auto
+     * @return String
      */
     @Override
     public String toString() {
         return super.toString()+"\nCantidad Pasajeros: "+ cantPasajeros;
     }
-    
+
 }

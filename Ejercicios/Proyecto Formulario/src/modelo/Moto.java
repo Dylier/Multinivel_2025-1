@@ -8,11 +8,11 @@ package modelo;
  *
  * @author Estudiante
  */
-public class Moto extends Vehiculo {    
-    
+public class Moto extends Vehiculo {
+
     /**
-     *
-     * @return
+     * Calcula impuesto moto segun cilindraje
+     * @return double
      */
     @Override
     public double getImpuesto(){
@@ -24,8 +24,8 @@ public class Moto extends Vehiculo {
     }
 
     /**
-     *
-     * @return
+     * Devuelve datos de la moto en formato arreglo
+     * @return Object[]
      */
     @Override
     public Object[] getArregloDatos() {
@@ -34,7 +34,7 @@ public class Moto extends Vehiculo {
 
 
     /**
-     *
+     * Constructor predeterminado para crear una moto
      */
     public Moto() {
         super();
