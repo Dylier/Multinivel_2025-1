@@ -8,23 +8,36 @@ package modelo;
  *
  * @author Estudiante
  */
-public class Moto extends Vehiculo {
-
+public class Moto extends Vehiculo {    
+    
+    /**
+     *
+     * @return
+     */
     @Override
-    public double Impuesto(){
+    public double getImpuesto(){
         if(this.getCilindraje()>125){
             return this.getValor()*0.15;
         }else{
             return this.getValor()*0.0;
         }
     }
-    
-    public Moto(String Placa, String Marca, int Modelo, double Valor) {
-        super(Placa, Marca, Modelo, Valor);
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public Object[] getArregloDatos() {
+        return new Object[]{"Moto", placa, marca, modelo, cilindraje, "2", String.format("%.2f", valor), String.format("%.2f", getImpuesto())};
     }
 
+
+    /**
+     *
+     */
     public Moto() {
         super();
-    }    
-    
+    }
+
 }

@@ -35,6 +35,14 @@ public class ControladorGUI implements ActionListener {
     int id_form;
     ArrayList<Contribuyente> listaC;
 
+    /**
+     *
+     * @param frmR
+     * @param objR
+     * @param objF
+     * @param objV
+     * @param listaC
+     */
     public ControladorGUI(FrmRegistro frmR, Recaudo objR, Formulario objF, Vehiculo objV, ArrayList<Contribuyente> listaC) {
         this.frmR = frmR;
         this.objR = objR;
@@ -43,6 +51,9 @@ public class ControladorGUI implements ActionListener {
         this.listaC = listaC;
     }
     
+    /**
+     *
+     */
     public ControladorGUI() {
         this.frmR = new FrmRegistro();
         this.objR = new Recaudo();
@@ -51,7 +62,9 @@ public class ControladorGUI implements ActionListener {
         this.listaC = new ArrayList<>();
     }
 
-
+    /**
+     *
+     */
     public void iniciar() {
         frmR.setTitle("Registro Vehiculos");
         frmR.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,6 +89,10 @@ public class ControladorGUI implements ActionListener {
         frmR.setVisible(true);
     }
     
+    /**
+     *
+     * @param Comp
+     */
     public void limpiarDatos(Container Comp){
         for(Component c: Comp.getComponents()){
             if (c instanceof JTextField){
@@ -91,6 +108,10 @@ public class ControladorGUI implements ActionListener {
         }
     }
     
+    /**
+     *
+     * @param objJT
+     */
     public void limpiarDatos(JTable objJT){
         DefaultTableModel plantilla = (DefaultTableModel) objJT.getModel();
         plantilla.setRowCount(0); 
@@ -119,6 +140,10 @@ public class ControladorGUI implements ActionListener {
         return infoComp;        
     }
     
+    /**
+     *
+     * @param tablas
+     */
     public void agregarContriyenteTabla(List<JTable> tablas) {
         for (Contribuyente c: listaC) {
             Object[] datos = {
@@ -136,6 +161,11 @@ public class ControladorGUI implements ActionListener {
         }
     }   
 
+    /**
+     *
+     * @param contribuyente
+     * @param tablas
+     */
     public void agregarContriyenteTabla(ArrayList<Contribuyente> contribuyente, List<JTable> tablas) {
         for (Contribuyente c: contribuyente) {
             Object[] datos = {
@@ -153,7 +183,10 @@ public class ControladorGUI implements ActionListener {
         }
     }   
 
-
+    /**
+     *
+     * @param tablas
+     */
     public void agregarVehiculoTabla(List<JTable> tablas) {
         Object[] datos;
         if (objV instanceof Auto) {
@@ -163,9 +196,9 @@ public class ControladorGUI implements ActionListener {
                 objV.getMarca(),
                 objV.getModelo(),
                 objV.getCilindraje(), 
-                ((Auto) objV).getCantPass(),
+                ((Auto) objV).getCantPasajeros(),
                 objV.getValor(), 
-                String.format("%.2f", objV.Impuesto())
+                String.format("%.2f", objV.getImpuesto())
             };
         } else {
             datos = new Object[]{
@@ -176,12 +209,17 @@ public class ControladorGUI implements ActionListener {
                 objV.getCilindraje(),
                 "2",
                 objV.getValor(),
-                String.format("%.2f", objV.Impuesto())
+                String.format("%.2f", objV.getImpuesto())
             };
         }
         agregarInformacionTabla(datos, tablas);
     }
 
+    /**
+     *
+     * @param vehiculo
+     * @param tablas
+     */
     public void agregarVehiculoTabla(Vehiculo vehiculo, List<JTable> tablas) {
         Object[] datos;
         if (vehiculo instanceof Auto) {
@@ -191,9 +229,9 @@ public class ControladorGUI implements ActionListener {
                 vehiculo.getMarca(),
                 vehiculo.getModelo(),
                 vehiculo.getCilindraje(), 
-                ((Auto) vehiculo).getCantPass(),
+                ((Auto) vehiculo).getCantPasajeros(),
                 vehiculo.getValor(), 
-                String.format("%.2f", vehiculo.Impuesto())
+                String.format("%.2f", vehiculo.getImpuesto())
             };
         } else {
             datos = new Object[]{
@@ -204,12 +242,17 @@ public class ControladorGUI implements ActionListener {
                 vehiculo.getCilindraje(),
                 "2",
                 vehiculo.getValor(),
-                String.format("%.2f", vehiculo.Impuesto())
+                String.format("%.2f", vehiculo.getImpuesto())
             };
         }
         agregarInformacionTabla(datos, tablas);
     }
 
+    /**
+     *
+     * @param Comp
+     * @param estado
+     */
     public void bloquearDatos(Container Comp, boolean estado){
         for(Component c: Comp.getComponents()){
             if (c instanceof JTextField){
@@ -224,7 +267,11 @@ public class ControladorGUI implements ActionListener {
         }
     }
 
-    
+    /**
+     *
+     * @param id
+     * @return
+     */
     public Formulario buscarFormulario(int id){
         Formulario f = null;
         for (Formulario formulario : objR.getFormularios()) {
@@ -236,6 +283,10 @@ public class ControladorGUI implements ActionListener {
         return f;
     }
     
+    /**
+     *
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(frmR.getCmbVehiculo())) {
@@ -263,7 +314,7 @@ public class ControladorGUI implements ActionListener {
 
         if (e.getSource().equals(frmR.getBtnRegistrar())) {
             if (informacionCompleta(frmR.getPnlVehiculo())){
-                if (objV instanceof Auto)((Auto)objV).setCantPass(Integer.parseInt(frmR.getTxtCanPas().getText()));
+                if (objV instanceof Auto)((Auto)objV).setCantPasajeros(Integer.parseInt(frmR.getTxtCanPas().getText()));
                 objV.setPlaca(frmR.getTxtPlaca().getText());
                 objV.setModelo(Integer.parseInt(frmR.getTxtModelo().getText()));
                 objV.setMarca(frmR.getTxtMarca().getText());
@@ -285,7 +336,7 @@ public class ControladorGUI implements ActionListener {
                 bloquearDatos(frmR.getPnlVehiculo(), false);
 
                 JOptionPane.showMessageDialog(frmR,
-                        "Datos Registrados: " + objV.toString() + "\nImpuesto: " + String.format("%.2f", objV.Impuesto()),
+                        "Datos Registrados: " + objV.toString() + "\nImpuesto: " + String.format("%.2f", objV.getImpuesto()),
                         "Registro.", JOptionPane.INFORMATION_MESSAGE);          
                 }
             }

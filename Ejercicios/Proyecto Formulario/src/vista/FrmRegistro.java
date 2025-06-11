@@ -834,519 +834,1026 @@ public class FrmRegistro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPlacaActionPerformed
 
+    /**
+     *
+     * @return
+     */
     public JLabel getNFormulario() {
         return NFormulario;
     }
 
+    /**
+     *
+     * @param NFormulario
+     */
     public void setNFormulario(JLabel NFormulario) {
         this.NFormulario = NFormulario;
     }
 
+    /**
+     *
+     * @return
+     */
     public JButton getBtnAnadirFormulario() {
         return btnAnadirFormulario;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLbAvisos() {
         return lbAvisos;
     }
 
+    /**
+     *
+     * @param lbAvisos
+     */
     public void setLbAvisos(JLabel lbAvisos) {
         this.lbAvisos = lbAvisos;
     }
         
+    /**
+     *
+     * @return
+     */
     public JToolBar getTbAvisos() {
         return tbAvisos;
     }
 
+    /**
+     *
+     * @param tbAvisos
+     */
     public void setTbAvisos(JToolBar tbAvisos) {
         this.tbAvisos = tbAvisos;
     }
 
+    /**
+     *
+     * @param btnAnadirFormulario
+     */
     public void setBtnAnadirFormulario(JButton btnAnadirFormulario) {
         this.btnAnadirFormulario = btnAnadirFormulario;
     }
 
+    /**
+     *
+     * @return
+     */
     public JButton getBtnBorrarVehiculo() {
         return btnCambiarVehiculo;
     }
 
+    /**
+     *
+     * @param btnBorrarVehiculo
+     */
     public void setBtnBorrarVehiculo(JButton btnBorrarVehiculo) {
         this.btnCambiarVehiculo = btnBorrarVehiculo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JButton getBtnBuscar() {
         return btnBuscar;
     }
 
+    /**
+     *
+     * @param btnBuscar
+     */
     public void setBtnBuscar(JButton btnBuscar) {
         this.btnBuscar = btnBuscar;
     }
     
+    /**
+     *
+     * @return
+     */
     public JButton getBtnRecaudo() {
         return btnRecaudo;
     }
 
+    /**
+     *
+     * @param btnRecaudo
+     */
     public void setBtnRecaudo(JButton btnRecaudo) {
         this.btnRecaudo = btnRecaudo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JButton getBtnRegistrar() {
         return btnRegistrar;
     }
 
+    /**
+     *
+     * @param btnRegistrar
+     */
     public void setBtnRegistrar(JButton btnRegistrar) {
         this.btnRegistrar = btnRegistrar;
     }
 
+    /**
+     *
+     * @return
+     */
     public JButton getBtnRegistrarProp() {
         return btnRegistrarProp;
     }
 
+    /**
+     *
+     * @param btnRegistrarProp
+     */
     public void setBtnRegistrarProp(JButton btnRegistrarProp) {
         this.btnRegistrarProp = btnRegistrarProp;
     }
 
+    /**
+     *
+     * @return
+     */
     public JComboBox<String> getCmbNFormulario() {
         return cmbNFormulario;
     }
 
+    /**
+     *
+     * @param cmbNFormulario
+     */
     public void setCmbNFormulario(JComboBox<String> cmbNFormulario) {
         this.cmbNFormulario = cmbNFormulario;
     }
 
+    /**
+     *
+     * @return
+     */
     public JComboBox<String> getCmbTipoDocu() {
         return cmbTipoDocu;
     }
 
+    /**
+     *
+     * @param cmbTipoDocu
+     */
     public void setCmbTipoDocu(JComboBox<String> cmbTipoDocu) {
         this.cmbTipoDocu = cmbTipoDocu;
     }
 
+    /**
+     *
+     * @return
+     */
     public JComboBox<String> getCmbVehiculo() {
         return cmbVehiculo;
     }
 
+    /**
+     *
+     * @param cmbVehiculo
+     */
     public void setCmbVehiculo(JComboBox<String> cmbVehiculo) {
         this.cmbVehiculo = cmbVehiculo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblCalidad() {
         return lblCalidad;
     }
 
+    /**
+     *
+     * @param lblCalidad
+     */
     public void setLblCalidad(JLabel lblCalidad) {
         this.lblCalidad = lblCalidad;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblCantPas() {
         return lblCantPas;
     }
 
+    /**
+     *
+     * @param lblCantPas
+     */
     public void setLblCantPas(JLabel lblCantPas) {
         this.lblCantPas = lblCantPas;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblCedula() {
         return lblCedula;
     }
 
+    /**
+     *
+     * @param lblCedula
+     */
     public void setLblCedula(JLabel lblCedula) {
         this.lblCedula = lblCedula;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblCilindraje() {
         return lblCilindraje;
     }
 
+    /**
+     *
+     * @param lblCilindraje
+     */
     public void setLblCilindraje(JLabel lblCilindraje) {
         this.lblCilindraje = lblCilindraje;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblCombustible() {
         return lblCombustible;
     }
 
+    /**
+     *
+     * @param lblCombustible
+     */
     public void setLblCombustible(JLabel lblCombustible) {
         this.lblCombustible = lblCombustible;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblCorreo() {
         return lblCorreo;
     }
 
+    /**
+     *
+     * @param lblCorreo
+     */
     public void setLblCorreo(JLabel lblCorreo) {
         this.lblCorreo = lblCorreo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblDireccion() {
         return lblDireccion;
     }
 
+    /**
+     *
+     * @param lblDireccion
+     */
     public void setLblDireccion(JLabel lblDireccion) {
         this.lblDireccion = lblDireccion;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblFecNac() {
         return lblFecNac;
     }
 
+    /**
+     *
+     * @param lblFecNac
+     */
     public void setLblFecNac(JLabel lblFecNac) {
         this.lblFecNac = lblFecNac;
     }
 
+    /**
+     *
+     * @return
+     */
     public JButton getBtnCambiarVehiculo() {
         return btnCambiarVehiculo;
     }
 
+    /**
+     *
+     * @param btnCambiarVehiculo
+     */
     public void setBtnCambiarVehiculo(JButton btnCambiarVehiculo) {
         this.btnCambiarVehiculo = btnCambiarVehiculo;
     }
     
+    /**
+     *
+     * @return
+     */
     public JLabel getLblMarca() {
         return lblMarca;
     }
 
+    /**
+     *
+     * @param lblMarca
+     */
     public void setLblMarca(JLabel lblMarca) {
         this.lblMarca = lblMarca;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblModelo() {
         return lblModelo;
     }
 
+    /**
+     *
+     * @param lblModelo
+     */
     public void setLblModelo(JLabel lblModelo) {
         this.lblModelo = lblModelo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblMunicipio() {
         return lblMunicipio;
     }
 
+    /**
+     *
+     * @param lblMunicipio
+     */
     public void setLblMunicipio(JLabel lblMunicipio) {
         this.lblMunicipio = lblMunicipio;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblNombre() {
         return lblNombre;
     }
 
+    /**
+     *
+     * @param lblNombre
+     */
     public void setLblNombre(JLabel lblNombre) {
         this.lblNombre = lblNombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblPlaca() {
         return lblPlaca;
     }
 
+    /**
+     *
+     * @param lblPlaca
+     */
     public void setLblPlaca(JLabel lblPlaca) {
         this.lblPlaca = lblPlaca;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblPropiedad() {
         return lblPropiedad;
     }
 
+    /**
+     *
+     * @param lblPropiedad
+     */
     public void setLblPropiedad(JLabel lblPropiedad) {
         this.lblPropiedad = lblPropiedad;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblRecaudoTotal() {
         return lblRecaudoTotal;
     }
 
+    /**
+     *
+     * @param lblRecaudoTotal
+     */
     public void setLblRecaudoTotal(JLabel lblRecaudoTotal) {
         this.lblRecaudoTotal = lblRecaudoTotal;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblTblContRecaudo() {
         return lblTblContRecaudo;
     }
 
+    /**
+     *
+     * @param lblTblContRecaudo
+     */
     public void setLblTblContRecaudo(JLabel lblTblContRecaudo) {
         this.lblTblContRecaudo = lblTblContRecaudo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblTblContribuyentes() {
         return lblTblContribuyentes;
     }
 
+    /**
+     *
+     * @param lblTblContribuyentes
+     */
     public void setLblTblContribuyentes(JLabel lblTblContribuyentes) {
         this.lblTblContribuyentes = lblTblContribuyentes;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblTblDatosVehiculo() {
         return lblTblDatosVehiculo;
     }
 
+    /**
+     *
+     * @param lblTblDatosVehiculo
+     */
     public void setLblTblDatosVehiculo(JLabel lblTblDatosVehiculo) {
         this.lblTblDatosVehiculo = lblTblDatosVehiculo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblTblVehiRecaudo() {
         return lblTblVehiRecaudo;
     }
 
+    /**
+     *
+     * @param lblTblVehiRecaudo
+     */
     public void setLblTblVehiRecaudo(JLabel lblTblVehiRecaudo) {
         this.lblTblVehiRecaudo = lblTblVehiRecaudo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblTipo() {
         return lblTipo;
     }
 
+    /**
+     *
+     * @param lblTipo
+     */
     public void setLblTipo(JLabel lblTipo) {
         this.lblTipo = lblTipo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JLabel getLblValor() {
         return lblValor;
     }
 
+    /**
+     *
+     * @param lblValor
+     */
     public void setLblValor(JLabel lblValor) {
         this.lblValor = lblValor;
     }
 
+    /**
+     *
+     * @return
+     */
     public JPanel getPnlRecaudo() {
         return pnlRecaudo;
     }
 
+    /**
+     *
+     * @param pnlRecaudo
+     */
     public void setPnlRecaudo(JPanel pnlRecaudo) {
         this.pnlRecaudo = pnlRecaudo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTabbedPane getTabPaneRecaudo() {
         return tabPaneRecaudo;
     }
 
+    /**
+     *
+     * @param tabPaneRecaudo
+     */
     public void setTabPaneRecaudo(JTabbedPane tabPaneRecaudo) {
         this.tabPaneRecaudo = tabPaneRecaudo;
     }
 
-
-    
-
+    /**
+     *
+     * @return
+     */
     public JPanel getPnlProp() {
         return pnlProp;
     }
 
+    /**
+     *
+     * @param pnlProp
+     */
     public void setPnlProp(JPanel pnlProp) {
         this.pnlProp = pnlProp;
     }
 
+    /**
+     *
+     * @return
+     */
     public JPanel getPnlVehiculo() {
         return pnlVehiculo;
     }
 
+    /**
+     *
+     * @param pnlVehiculo
+     */
     public void setPnlVehiculo(JPanel pnlVehiculo) {
         this.pnlVehiculo = pnlVehiculo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JScrollPane getScrollTblDatosContRecaudo() {
         return scrollTblDatosContRecaudo;
     }
 
+    /**
+     *
+     * @param scrollTblDatosContRecaudo
+     */
     public void setScrollTblDatosContRecaudo(JScrollPane scrollTblDatosContRecaudo) {
         this.scrollTblDatosContRecaudo = scrollTblDatosContRecaudo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JScrollPane getScrollTblDatosContribuyentes() {
         return scrollTblDatosContribuyentes;
     }
 
+    /**
+     *
+     * @param scrollTblDatosContribuyentes
+     */
     public void setScrollTblDatosContribuyentes(JScrollPane scrollTblDatosContribuyentes) {
         this.scrollTblDatosContribuyentes = scrollTblDatosContribuyentes;
     }
 
+    /**
+     *
+     * @return
+     */
     public JScrollPane getScrollTblDatosVehiculo() {
         return scrollTblDatosVehiculo;
     }
 
+    /**
+     *
+     * @param scrollTblDatosVehiculo
+     */
     public void setScrollTblDatosVehiculo(JScrollPane scrollTblDatosVehiculo) {
         this.scrollTblDatosVehiculo = scrollTblDatosVehiculo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JScrollPane getScrollTblVehiRecaudo() {
         return scrollTblVehiRecaudo;
     }
 
+    /**
+     *
+     * @param scrollTblVehiRecaudo
+     */
     public void setScrollTblVehiRecaudo(JScrollPane scrollTblVehiRecaudo) {
         this.scrollTblVehiRecaudo = scrollTblVehiRecaudo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTabbedPane getTabPaneVehiculo() {
         return tabPaneRecaudo;
     }
 
+    /**
+     *
+     * @param tabPaneVehiculo
+     */
     public void setTabPaneVehiculo(JTabbedPane tabPaneVehiculo) {
         this.tabPaneRecaudo = tabPaneVehiculo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTable getTblDatosContRecaudo() {
         return tblDatosContRecaudo;
     }
 
+    /**
+     *
+     * @param tblDatosContRecaudo
+     */
     public void setTblDatosContRecaudo(JTable tblDatosContRecaudo) {
         this.tblDatosContRecaudo = tblDatosContRecaudo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTable getTblDatosContibuyentes() {
         return tblDatosContibuyentes;
     }
 
+    /**
+     *
+     * @param tblDatosContibuyentes
+     */
     public void setTblDatosContibuyentes(JTable tblDatosContibuyentes) {
         this.tblDatosContibuyentes = tblDatosContibuyentes;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTable getTblDatosVehiRecaudo() {
         return tblDatosVehiRecaudo;
     }
 
+    /**
+     *
+     * @param tblDatosVehiRecaudo
+     */
     public void setTblDatosVehiRecaudo(JTable tblDatosVehiRecaudo) {
         this.tblDatosVehiRecaudo = tblDatosVehiRecaudo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTable getTblDatosVehiculo() {
         return tblDatosVehiculo;
     }
 
+    /**
+     *
+     * @param tblDatosVehiculo
+     */
     public void setTblDatosVehiculo(JTable tblDatosVehiculo) {
         this.tblDatosVehiculo = tblDatosVehiculo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtCalidad() {
         return txtCalidad;
     }
 
+    /**
+     *
+     * @param txtCalidad
+     */
     public void setTxtCalidad(JTextField txtCalidad) {
         this.txtCalidad = txtCalidad;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtCanPas() {
         return txtCanPas;
     }
 
+    /**
+     *
+     * @param txtCanPas
+     */
     public void setTxtCanPas(JTextField txtCanPas) {
         this.txtCanPas = txtCanPas;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtCedula() {
         return txtCedula;
     }
 
+    /**
+     *
+     * @param txtCedula
+     */
     public void setTxtCedula(JTextField txtCedula) {
         this.txtCedula = txtCedula;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtCilindraje() {
         return txtCilindraje;
     }
 
+    /**
+     *
+     * @param txtCilindraje
+     */
     public void setTxtCilindraje(JTextField txtCilindraje) {
         this.txtCilindraje = txtCilindraje;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtCombustible() {
         return txtCombustible;
     }
 
+    /**
+     *
+     * @param txtCombustible
+     */
     public void setTxtCombustible(JTextField txtCombustible) {
         this.txtCombustible = txtCombustible;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtCorreo() {
         return txtCorreo;
     }
 
+    /**
+     *
+     * @param txtCorreo
+     */
     public void setTxtCorreo(JTextField txtCorreo) {
         this.txtCorreo = txtCorreo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtDireccion() {
         return txtDireccion;
     }
 
+    /**
+     *
+     * @param txtDireccion
+     */
     public void setTxtDireccion(JTextField txtDireccion) {
         this.txtDireccion = txtDireccion;
     }
 
+    /**
+     *
+     * @return
+     */
     public JButton getBtnEditar() {
         return btnEditar;
     }
 
+    /**
+     *
+     * @param btnEditar
+     */
     public void setBtnEditar(JButton btnEditar) {
         this.btnEditar = btnEditar;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtFecNac() {
         return txtFecNac;
     }
 
+    /**
+     *
+     * @param txtFecNac
+     */
     public void setTxtFecNac(JTextField txtFecNac) {
         this.txtFecNac = txtFecNac;
     }
     
-    
-    
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtMarca() {
         return txtMarca;
     }
 
+    /**
+     *
+     * @param txtMarca
+     */
     public void setTxtMarca(JTextField txtMarca) {
         this.txtMarca = txtMarca;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtModelo() {
         return txtModelo;
     }
 
+    /**
+     *
+     * @param txtModelo
+     */
     public void setTxtModelo(JTextField txtModelo) {
         this.txtModelo = txtModelo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtMunicipio() {
         return txtMunicipio;
     }
 
+    /**
+     *
+     * @param txtMunicipio
+     */
     public void setTxtMunicipio(JTextField txtMunicipio) {
         this.txtMunicipio = txtMunicipio;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtNom() {
         return txtNom;
     }
 
+    /**
+     *
+     * @param txtNom
+     */
     public void setTxtNom(JTextField txtNom) {
         this.txtNom = txtNom;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtPlaca() {
         return txtPlaca;
     }
 
+    /**
+     *
+     * @param txtPlaca
+     */
     public void setTxtPlaca(JTextField txtPlaca) {
         this.txtPlaca = txtPlaca;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtPropiedad() {
         return txtPropiedad;
     }
 
+    /**
+     *
+     * @param txtPropiedad
+     */
     public void setTxtPropiedad(JTextField txtPropiedad) {
         this.txtPropiedad = txtPropiedad;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtRecaudo() {
         return txtRecaudo;
     }
 
+    /**
+     *
+     * @param txtRecaudo
+     */
     public void setTxtRecaudo(JTextField txtRecaudo) {
         this.txtRecaudo = txtRecaudo;
     }
 
+    /**
+     *
+     * @return
+     */
     public JTextField getTxtValor() {
         return txtValor;
     }
 
+    /**
+     *
+     * @param txtValor
+     */
     public void setTxtValor(JTextField txtValor) {
         this.txtValor = txtValor;
     }

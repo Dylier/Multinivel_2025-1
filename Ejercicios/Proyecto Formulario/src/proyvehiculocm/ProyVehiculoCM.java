@@ -1,6 +1,6 @@
-package proyvehiculocm;
+ package proyvehiculocm;
 
-import control.ControladorGUI;
+import control.ControladorPrincipal;
 
 /**
  *
@@ -8,8 +8,12 @@ import control.ControladorGUI;
  */
 public class ProyVehiculoCM {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
-        ControladorGUI objC = new ControladorGUI();
+        ControladorPrincipal objC = new ControladorPrincipal();
         objC.iniciar();
     }
     

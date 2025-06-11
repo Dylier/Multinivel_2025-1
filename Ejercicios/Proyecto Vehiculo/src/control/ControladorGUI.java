@@ -90,11 +90,11 @@ public class ControladorGUI implements ActionListener {
         DefaultTableModel plantilla = (DefaultTableModel) tabla.getModel();
         for (Vehiculo vh : objR.getListaV()) {
             if (vh instanceof Auto) {
-                Object[] datos = {"Auto", ((Auto) vh).getPlaca(), ((Auto) vh).getMarca(), ((Auto) vh).getModelo(), ((Auto) vh).getCilindraje(), ((Auto) vh).getCantPass(), ((Auto) vh).getValor(), String.format("%.2f", ((Auto) vh).Impuesto())};
+                Object[] datos = {"Auto", ((Auto) vh).getPlaca(), ((Auto) vh).getMarca(), ((Auto) vh).getModelo(), ((Auto) vh).getCilindraje(), ((Auto) vh).getCantPasajeros(), ((Auto) vh).getValor(), String.format("%.2f", ((Auto) vh).getImpuesto())};
                 plantilla.addRow(datos);
             } else {
                 Moto objM = (Moto) vh;
-                Object[] datos = {"Moto", objM.getPlaca(), objM.getMarca(), objM.getModelo(), objM.getCilindraje(), "2", objM.getValor(), objM.Impuesto()};
+                Object[] datos = {"Moto", objM.getPlaca(), objM.getMarca(), objM.getModelo(), objM.getCilindraje(), "2", objM.getValor(), objM.getImpuesto()};
                 plantilla.addRow(datos);
             }
         } //cierre for
@@ -135,7 +135,7 @@ public class ControladorGUI implements ActionListener {
                 ((Auto) objV).setMarca(frmR.getTxtMarca().getText());
                 ((Auto) objV).setValor(Double.parseDouble(frmR.getTxtValor().getText()));
                 ((Auto) objV).setCilindraje(Integer.parseInt(frmR.getTxtCilindraje().getText()));
-                ((Auto) objV).setCantPass(Integer.parseInt(frmR.getTxtCanPas().getText()));
+                ((Auto) objV).setCantPasajeros((Integer.parseInt(frmR.getTxtCanPas().getText())));
             }
                 
             limpiarDatos(frmR);
@@ -143,7 +143,7 @@ public class ControladorGUI implements ActionListener {
             objR.getListaV().add(objV);
             agregarRecaudoTabla(objR, frmR.getTblDatos());
             JOptionPane.showMessageDialog(frmR,
-                    "Datos Registrados: " + objV.toString() + "\nImpuesto: " + String.format("%.2f", objV.Impuesto()),
+                    "Datos Registrados: " + objV.toString() + "\nImpuesto: " + String.format("%.2f", objV.getImpuesto()),
                     "Registro.", JOptionPane.INFORMATION_MESSAGE);
             
 
